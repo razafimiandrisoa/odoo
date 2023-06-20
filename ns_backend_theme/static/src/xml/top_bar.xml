@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-inherit="web.NavBar" t-inherit-mode="extension" owl="1">
+        <xpath expr="//nav[hasclass('o_main_navbar')]" position="after">
+            <div class="sidebar_panel" id="sidebar_panel">
+                <div class="sidebar">
+                    <div class="sidebar_close">
+                        <a id="closeSidebar" style="cursor: pointer;">
+                            <img src="/ns_backend_theme/static/src/img/icons/close.png"/>
+                        </a>
+                    </div>
+                    <center>
+                        <h6 class="sidebar_head">MENU</h6>
+                    </center>
+                    <ul class="sidebar_menu">
+                        <t t-foreach="menuService.getApps()" t-as="app">
+                            <li>
+                                <a role="menuitem"
+                                   t-attf-href="#menu_id={{app.id}}"
+                                   class="nav-link">
+                                    <img class="sidebar_img"
+                                         t-attf-src="data:image/png;base64,{{app.webIconData}}"/>
+                                    <span class="sidebar_app_name">
+                                        <t t-esc="app.name"/>
+                                    </span>
+                                 </a>
+                            </li>
+                        </t>
+                    </ul>
+                </div>
+            </div>
+        </xpath>
+    </t>
+
+    <t t-inherit="web.NavBar.AppsMenu" t-inherit-mode="extension" owl="1">
+<!--        <xpath expr="//Dropdown[hasclass('o_navbar_apps_menu')]" position="replace">-->
+<!--            <li class="dropdown">-->
+<!--                <a id="openSidebar"-->
+<!--                   style="display: block; cursor: pointer;margin-top: -6px;margin-left: 15px;color: #FFFFFF;">-->
+<!--                    <i class="fa fa-th fa-lg"/>-->
+<!--                </a>-->
+<!--                <a id="closeSidebar"-->
+<!--                   style="display: none; cursor: pointer;color: #FFFFFF;top: 13px;position: relative;">-->
+<!--                    <i class="fa fa-chevron-left fa-lg"/>-->
+<!--                </a>-->
+<!--            </li>-->
+<!--        </xpath>-->
+
+        <xpath expr="//AppsMenu" position="replace">
+            <li class="dropdown">
+                <a id="openSidebar"
+                   style="display: block; cursor: pointer;margin-top: -6px;margin-left: 15px;color: #FFFFFF;">
+                    <i class="fa fa-th fa-lg"/>
+                </a>
+                <a id="closeSidebar"
+                   style="display: none; cursor: pointer;color: #FFFFFF;top: 13px;position: relative;">
+                    <i class="fa fa-chevron-left fa-lg"/>
+                </a>
+            </li>
+        </xpath>
+    </t>
+</templates>

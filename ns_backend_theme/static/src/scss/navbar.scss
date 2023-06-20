@@ -1,0 +1,17 @@
+.o_main_navbar {
+  background-color: $o-enterprise-color;
+}
+
+.o_main_navbar .o_menu_sections {
+  background-color: $o-enterprise-color;
+}
+
+@include media-breakpoint-down(sm) {
+    .o_main_navbar {
+        .o_menu_sections_more {
+            .fa-plus:before {
+                content: "\f067" !important;
+            }
+        }
+    }
+}
