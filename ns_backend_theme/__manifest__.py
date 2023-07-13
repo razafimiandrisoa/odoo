@@ -34,5 +34,6 @@
             "/ns_backend_theme/static/src/xml/top_bar.xml",
         ],
     },
+    "license": "LGPL-3",
 
 }
