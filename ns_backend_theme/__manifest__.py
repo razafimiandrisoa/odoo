@@ -17,9 +17,14 @@
     'data': [
         'views/templates.xml',
     ],
-
+    'images': [
+        'static/description/icon.png',
+        'static/description/1.png',
+        'static/description/2.png',
+    ],
     'qweb': [
         'static/src/xml/top_bar.xml',
     ],
+    "license": "LGPL-3",
 
 }
