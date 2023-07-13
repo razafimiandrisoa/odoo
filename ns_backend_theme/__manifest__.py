@@ -23,9 +23,7 @@
     ],
     'assets': {
         "web.assets_backend": [
-            "/ns_backend_theme/static/src/extra/js/topbar.js",
             "/ns_backend_theme/static/src/js/sidebar_menu.js",
-            "/ns_backend_theme/static/src/js/loading_indicator.js",
             "/ns_backend_theme/static/src/scss/loading.scss",
             "/ns_backend_theme/static/src/scss/sidebar.scss",
             "/ns_backend_theme/static/src/scss/navbar.scss",

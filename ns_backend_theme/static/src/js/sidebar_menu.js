@@ -3,20 +3,50 @@ odoo.define('ns_backend_theme.SidebarMenu', function (require) {
 
 
     //sidebar toggle effect
-    $(document).on("click", "#closeSidebar", function(event){
+    $(document).on("click", "#closeSidebar", function (event) {
         $("#closeSidebar").hide();
         $("#openSidebar").show();
     });
-    $(document).on("click", "#openSidebar", function(event){
+    $(document).on("click", "#openSidebar", function (event) {
         $("#openSidebar").hide();
         $("#closeSidebar").show();
     });
-    $(document).on("click", "#openSidebar", function(event){
-        $("#sidebar_panel").css({'display':'block'});
+    $(document).on("click", "body", function (event) {
+        var elementClick = "#openSidebar";
+        if (!$(event.target).closest(elementClick).length) {
+            $("#sidebar_panel").css({'display': 'none'});
+            $(".o_action_manager").css({'margin-left': '0px'});
+            $(".o_main_navbar").css({'margin-left': '0px', 'width': '100%'});
+
+            //remove class in navbar
+            var navbar = $(".o_main_navbar");
+            var navbar_id = navbar.data("id");
+            $("nav").removeClass(navbar_id);
+            navbar.removeClass("small_nav");
+
+            //remove class in action-manager
+            var action_manager = $(".o_action_manager");
+            var action_manager_id = action_manager.data("id");
+            $("div").removeClass(action_manager_id);
+            action_manager.removeClass("sidebar_margin");
+
+            //remove class in o_main_navbar
+            var top_head = $(".o_main_navbar");
+            var top_head_id = top_head.data("id");
+            $("div").removeClass(top_head_id);
+            top_head.removeClass("sidebar_margin");
+            $("#closeSidebar").hide();
+            $("#openSidebar").show();
+        }
+
+    });
+
+    $(document).on("click", "#openSidebar", function (event) {
+        $("#sidebar_panel").css({'display': 'block'});
         //Noarison edit
-        $(".o_action_manager").css({'margin-left': '280px','transition':'all .1s linear'});
+        $(".o_action_manager").css({'margin-left': '280px', 'transition': 'all .1s linear'});
         //Noarison edit
-        $(".o_main_navbar").css({'margin-left': '280px','transition':'all .1s linear', 'width':'auto'});
+        $(".o_main_navbar").css({'margin-left': '280px', 'transition': 'all .1s linear', 'width': 'auto'});
 
         //add class in navbar
         var navbar = $(".o_main_navbar");
@@ -36,10 +66,11 @@ odoo.define('ns_backend_theme.SidebarMenu', function (require) {
         $("div").addClass(top_head_id);
         top_head.addClass("sidebar_margin");
     });
-    $(document).on("click", "#closeSidebar", function(event){
-        $("#sidebar_panel").css({'display':'none'});
+
+    $(document).on("click", "#closeSidebar", function (event) {
+        $("#sidebar_panel").css({'display': 'none'});
         $(".o_action_manager").css({'margin-left': '0px'});
-        $(".o_main_navbar").css({'margin-left': '0px', 'width':'100%'});
+        $(".o_main_navbar").css({'margin-left': '0px', 'width': '100%'});
 
         //remove class in navbar
         var navbar = $(".o_main_navbar");
@@ -60,7 +91,7 @@ odoo.define('ns_backend_theme.SidebarMenu', function (require) {
         top_head.removeClass("sidebar_margin");
     });
 
-    $(document).on("click", ".sidebar a", function(event){
+    $(document).on("click", ".sidebar a", function (event) {
         var menu = $(".sidebar a");
         var $this = $(this);
         var id = $this.data("id");
@@ -69,9 +100,9 @@ odoo.define('ns_backend_theme.SidebarMenu', function (require) {
         $this.addClass("active");
 
         //sidebar close on menu-item click
-        $("#sidebar_panel").css({'display':'none'});
+        $("#sidebar_panel").css({'display': 'none'});
         $(".o_action_manager").css({'margin-left': '0px'});
-        $(".o_main_navbar").css({'margin-left': '0px', 'width':'100%'});
+        $(".o_main_navbar").css({'margin-left': '0px', 'width': '100%'});
         $("#closeSidebar").hide();
         $("#openSidebar").show();
 
