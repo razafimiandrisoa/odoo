@@ -10,7 +10,7 @@
     """,
     'author': "Noarison Léonce RAZAFIMIANDRISOA",
     "maintainers": ["Noarison Léonce RAZAFIMIANDRISOA (lrazafimaindrisoa@gmail.com)"],
-    'category': 'Website',
+    'category': 'Themes/Backend',
     'version': '15.1.0.0',
     'depends': ['base', 'web_responsive'],
     "excludes": ["web_enterprise"],
