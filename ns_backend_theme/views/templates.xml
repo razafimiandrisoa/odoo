@@ -8,7 +8,6 @@
             <script type="application/javascript" src="/ns_backend_theme/static/src/extra/js/topbar.js"/>
             <script type="application/javascript" src="/ns_backend_theme/static/src/js/chrome_menu.js"/>
             <script type="application/javascript" src="/ns_backend_theme/static/src/js/sidebar_menu.js"/>
-            <script type="application/javascript" src="/ns_backend_theme/static/src/js/loading_indicator.js"/>
         </xpath>
     </template>
 </odoo>
