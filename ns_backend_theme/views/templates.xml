@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_backend" name="Noasource Assets" inherit_id="web.assets_backend">
+        <xpath expr=".">
+            <link rel="stylesheet" href="/ns_backend_theme/static/src/scss/loading.scss"/>
+            <link rel="stylesheet" href="/ns_backend_theme/static/src/scss/sidebar.scss"/>
+            <link rel="stylesheet" href="/ns_backend_theme/static/src/scss/navbar.scss"/>
+            <script type="application/javascript" src="/ns_backend_theme/static/src/extra/js/topbar.js"/>
+            <script type="application/javascript" src="/ns_backend_theme/static/src/js/chrome_menu.js"/>
+            <script type="application/javascript" src="/ns_backend_theme/static/src/js/sidebar_menu.js"/>
+            <script type="application/javascript" src="/ns_backend_theme/static/src/js/loading_indicator.js"/>
+        </xpath>
+    </template>
+</odoo>

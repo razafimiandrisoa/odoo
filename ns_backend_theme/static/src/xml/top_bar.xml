@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<template>
+    <t t-extend="AppsMenu">
+        <t t-jquery="li.dropdown" t-operation="replace">
+            <li class="dropdown">
+                <a id="openSidebar"
+                   style="display: block; cursor: pointer;margin-top: -1px;margin-left: 15px;color: #FFFFFF;">
+                    <i class="fa fa-th fa-lg"/>
+                </a>
+                <a id="closeSidebar"
+                   style="display: none; cursor: pointer;color: #FFFFFF;top: -1px;position: relative;">
+                    <i class="fa fa-chevron-left fa-lg"/>
+                </a>
+            </li>
+            <div class="sidebar_panel" id="sidebar_panel">
+                <div class="sidebar">
+                    <center>
+                        <h6 class="sidebar_head">MENU</h6>
+                    </center>
+                    <ul class="sidebar_menu">
+                        <t t-foreach="widget.getApps()" t-as="app">
+                            <li>
+                                <a role="menuitem"
+                                   t-attf-href="#menu_id=#{app.menuID}"
+                                   class="nav-link">
+                                    <img class="sidebar_img"
+                                         t-attf-src="data:image/png;base64,#{app.web_icon_data}"/>
+                                    <span class="sidebar_app_name">
+                                        <t t-esc="app.name"/>
+                                    </span>
+                                </a>
+                            </li>
+                        </t>
+                    </ul>
+                </div>
+            </div>
+        </t>
+    </t>
+
+</template>
