@@ -16,6 +16,11 @@
     "excludes": ["web_enterprise"],
     'data': [
     ],
+    'images': [
+        'static/description/icon.png',
+        'static/description/1.png',
+        'static/description/2.png',
+    ],
     'assets': {
         "web.assets_backend": [
             "/ns_backend_theme/static/src/extra/js/topbar.js",
